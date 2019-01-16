@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="PETICIÓN POST"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:imeOptions="actionNext"
+        android:textAlignment="center"
+        android:id="@+id/txtnombre"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffff"
+        android:hint="nombre" />
+
+    <EditText
+        android:imeOptions="actionNext"
+        android:textAlignment="center"
+        android:id="@+id/txtdescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffff"
+        android:hint="descripcion" />
+
+    <EditText
+        android:inputType="number"
+        android:imeOptions="actionNext"
+        android:textAlignment="center"
+        android:id="@+id/txtprecio"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffff"
+        android:hint="precio" />
+
+    <EditText
+        android:id="@+id/txtcantidad"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffff"
+        android:hint="cantidad"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <EditText
+        android:imeOptions="actionNext"
+        android:textAlignment="center"
+        android:id="@+id/txtmarca"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffff"
+        android:hint="marca" />
+
+    <Button
+        android:id="@+id/btnenviar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="CREAR" />
+
+
+</LinearLayout>
