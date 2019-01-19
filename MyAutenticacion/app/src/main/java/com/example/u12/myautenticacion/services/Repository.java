@@ -1,15 +1,11 @@
-package com.example.u12.mydetailproduct.services;
+package com.example.u12.myautenticacion.services;
 
 
-import com.example.u12.mydetailproduct.models.DeleteResponse;
-import com.example.u12.mydetailproduct.models.Product;
-import com.example.u12.mydetailproduct.models.Users;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-import retrofit2.Call;
-import retrofit2.Response;
+
 
 public class Repository {
 
@@ -17,83 +13,10 @@ public class Repository {
 
     public Repository() {
         ServicesFactory servicesFactory =  new ServicesFactory();
+
         iServices= (IServices) servicesFactory.getInstanceServices(IServices.class);
     }
 
-   ///////////////////////////////////////parte Login///////////////////////////////////////7
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public Users logIn(String user, String password) throws IOException {
-        try {
-
-            Call<Users> call = iServices.logIn(user, password);
-            Response<Users> response =call.execute();
-            if(response.errorBody() != null){
-                throw defultError();
-            }else {
-                return response.body();
-            }
-        }catch (IOException e){
-            throw  defultError();
-        }
-
-
-    }
-
-
-
-
-
-
-
-
-    ///////// parte del  detail
     public ArrayList<Product> getProducts() throws IOException{
 
         try {
@@ -151,7 +74,4 @@ public class Repository {
 
 
     }
-
-
-    /////////////////////////////////////////////////////////////////////////////////
 }

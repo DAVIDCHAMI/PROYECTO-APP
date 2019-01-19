@@ -54,6 +54,121 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////  parte de  detail
     // trae la  lista  de  los  productos que expone el servicio
     private void getProducts() {
 
@@ -105,5 +220,11 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra("product", product);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        validateInternet();
     }
 }

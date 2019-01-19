@@ -8,10 +8,23 @@ import java.io.Serializable;
 public class Product implements Serializable {
 
 
+    @SerializedName("_id")
+    @Expose
+    private String idProducto;
+
+
+    public String getIdProducto() {
+        return idProducto;
+    }
+
+    public void setIdProducto(String idProducto) {
+        this.idProducto = idProducto;
+    }
 
     @SerializedName("name")
     @Expose
     private String product;
+
 
     @SerializedName("description")
     @Expose

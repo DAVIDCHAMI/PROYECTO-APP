@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#FFD2E6DC"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="142dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/img" />
+
+<android.support.design.widget.TextInputLayout
+    android:id="@+id/login_texInputUser"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <EditText
+        android:background="#FFFF"
+        android:id="@+id/txtuser"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:hint="Usiario" />
+
+
+
+</android.support.design.widget.TextInputLayout>
+
+  <android.support.design.widget.TextInputLayout
+      android:id="@+id/login_textInputPasswor"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <EditText
+          android:background="#FFFF"
+          android:id="@+id/txtpassword"
+          android:inputType="textPassword"
+          android:textStyle="bold"
+          android:textSize="30dp"
+          android:layout_width="match_parent"
+          android:layout_height="62dp"
+          android:layout_marginTop="20dp"
+          android:gravity="center"
+          android:hint="Usiario" />
+
+  </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnlogin"
+        android:textSize="30dp"
+        android:text="LOGIN"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickL"/>
+
+</LinearLayout>
