@@ -25,50 +25,6 @@ public class Repository {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public Users logIn(String user, String password) throws IOException {
         try {
 

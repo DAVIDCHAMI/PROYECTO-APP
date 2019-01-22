@@ -13,6 +13,7 @@ import com.example.u12.mydetailproduct.R;
 import com.example.u12.mydetailproduct.adapters.AdapterProducts;
 import com.example.u12.mydetailproduct.helps.ValidarInternet;
 import com.example.u12.mydetailproduct.models.Product;
+import com.example.u12.mydetailproduct.models.Users;
 import com.example.u12.mydetailproduct.services.Repository;
 import com.example.u12.mydetailproduct.viewsinterface.IMainActivity;
 
@@ -53,117 +54,6 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
             });
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -221,6 +111,12 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         intent.putExtra("product", product);
         startActivity(intent);
     }
+
+    @Override
+    public void intentToPerfilActivity(Users users) {
+
+    }
+
 
     @Override
     protected void onPostResume() {

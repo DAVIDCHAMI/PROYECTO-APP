@@ -1,5 +1,6 @@
 package com.example.u12.mydetailproduct.Activitys;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,17 +10,20 @@ import android.widget.Toast;
 
 import com.example.u12.mydetailproduct.R;
 import com.example.u12.mydetailproduct.helps.ValidarInternet;
+import com.example.u12.mydetailproduct.models.Product;
 import com.example.u12.mydetailproduct.models.Users;
 import com.example.u12.mydetailproduct.services.Repository;
+import com.example.u12.mydetailproduct.viewsinterface.IMainActivity;
 
 import java.io.IOException;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements IMainActivity {
 
     private EditText  txtUser,txtpasswor;
     private Button btnlogin;
     ValidarInternet validarInternet;
     Repository repository;
+    private IMainActivity iMainActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +60,11 @@ public class LoginActivity extends AppCompatActivity {
         try {
          Users user=   repository.logIn(txtUser.getText().toString(),txtpasswor.getText().toString());
             showMessage(user.getName());
+
+            Intent intent = new Intent(this, PerfilActivity.class);
+            intent.putExtra("usuario", user);
+            startActivity(intent);
+
         } catch (IOException e) {
      showMessage(e.getMessage());
         }
@@ -67,9 +76,22 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Toast.makeText(LoginActivity.this,mesaje,Toast.LENGTH_LONG).show();
-                finish();
+                //finish();
             }
         });
+
+    }
+
+    @Override
+    public void intentToDetailActivity(Product product) {
+
+    }
+
+    @Override
+    public void intentToPerfilActivity(Users usuario) {
+        Intent intent = new Intent(this, PerfilActivity.class);
+        intent.putExtra("usuario", usuario);
+        startActivity(intent);
 
     }
 }

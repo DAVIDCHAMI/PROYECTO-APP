@@ -3,7 +3,9 @@ package com.example.u12.mydetailproduct.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Users {
+import java.io.Serializable;
+
+public class Users implements Serializable {
 
     @SerializedName("_id")
     @Expose
