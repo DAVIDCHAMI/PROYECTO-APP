@@ -3,6 +3,8 @@ package com.example.u12.mydetailproduct.Activitys;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +19,7 @@ import com.example.u12.mydetailproduct.viewsinterface.IMainActivity;
 
 import java.io.IOException;
 
-public class LoginActivity extends AppCompatActivity implements IMainActivity {
+public class LoginActivity extends AppCompatActivity implements IMainActivity, TextWatcher {
 
     private EditText  txtUser,txtpasswor;
     private Button btnlogin;
@@ -30,7 +32,10 @@ public class LoginActivity extends AppCompatActivity implements IMainActivity {
         setContentView(R.layout.login_activity);
         validarInternet = new ValidarInternet(this);
         txtUser = findViewById(R.id.txtuser);
+        //metodo para activar  los escuchadores de los  campos saber si estan llenos  o  vacios
+        txtUser.addTextChangedListener(this);
         txtpasswor = findViewById(R.id.txtpassword);
+        txtpasswor.addTextChangedListener(this);
         btnlogin = findViewById(R.id.btnlogin);
         repository =  new Repository();
 
@@ -60,7 +65,7 @@ public class LoginActivity extends AppCompatActivity implements IMainActivity {
         try {
          Users user=   repository.logIn(txtUser.getText().toString(),txtpasswor.getText().toString());
             showMessage(user.getName());
-
+          //metodo para cambiar de actividad enviando  un objeto completo
             Intent intent = new Intent(this, PerfilActivity.class);
             intent.putExtra("usuario", user);
             startActivity(intent);
@@ -92,6 +97,29 @@ public class LoginActivity extends AppCompatActivity implements IMainActivity {
         Intent intent = new Intent(this, PerfilActivity.class);
         intent.putExtra("usuario", usuario);
         startActivity(intent);
+
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    //metodo para  validar los  campos llenos
+    @Override
+    public void afterTextChanged(Editable s) {
+        if (txtUser.getText().toString().isEmpty() || txtpasswor.getText().toString().isEmpty() ){
+            btnlogin.setEnabled(false);
+            btnlogin.setBackgroundResource(R.color.colorPrimary);
+        } else {
+            btnlogin.setEnabled(true);
+            btnlogin.setBackgroundResource(R.color.colorWhite);
+        }
 
     }
 }

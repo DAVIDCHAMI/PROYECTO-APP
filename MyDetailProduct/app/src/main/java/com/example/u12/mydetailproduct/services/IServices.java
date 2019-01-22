@@ -22,23 +22,11 @@ public interface IServices {
     @GET("user/auth")
     Call<Users> logIn(@Query("email") String user, @Query("password") String password);
 
-
-
-
-
-
-
-
-
-
-
-
-
     //////// metodos de detail /////////////////////////////
     @GET("products")
     Call <ArrayList<Product>> getProducts();
 
-
+//metodo de product
      @POST("products")
     Call<Product> saveProduct(@Body Product product);
 

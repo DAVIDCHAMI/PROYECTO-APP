@@ -71,6 +71,7 @@ public class Repository {
         return  new IOException("ha ocurrido un error");
     }
 
+    // metodo  para consumir servico de guardar producto
     public Product saveProducts(Product product)  throws  IOException{
 
         try {

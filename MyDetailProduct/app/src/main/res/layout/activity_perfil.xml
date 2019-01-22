@@ -9,7 +9,6 @@
     tools:context=".Activitys.PerfilActivity">
 
     <TextView
-
         android:layout_marginTop="10dp"
         android:textSize="30dp"
         android:textStyle="bold"
@@ -21,9 +20,9 @@
     <ImageView
         android:id="@+id/imgPerfil"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_marginTop="20dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
 
 
 
@@ -71,7 +70,7 @@
     android:onClick="onClickEmp"
     android:background="#FF84BBF2"
     android:textSize="20dp"
-    android:layout_marginTop="40dp"
+    android:layout_marginTop="30dp"
     android:text="EMPEZAR"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
