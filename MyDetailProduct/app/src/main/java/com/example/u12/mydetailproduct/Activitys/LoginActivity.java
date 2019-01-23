@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.u12.mydetailproduct.R;
+import com.example.u12.mydetailproduct.helps.Constantes;
+import com.example.u12.mydetailproduct.helps.CustomSharedPreferences;
 import com.example.u12.mydetailproduct.helps.ValidarInternet;
 import com.example.u12.mydetailproduct.models.Product;
 import com.example.u12.mydetailproduct.models.Users;
@@ -25,7 +27,8 @@ public class LoginActivity extends AppCompatActivity implements IMainActivity, T
     private Button btnlogin;
     ValidarInternet validarInternet;
     Repository repository;
-    private IMainActivity iMainActivity;
+    //private IMainActivity iMainActivity;
+    private CustomSharedPreferences customSharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +41,48 @@ public class LoginActivity extends AppCompatActivity implements IMainActivity, T
         txtpasswor.addTextChangedListener(this);
         btnlogin = findViewById(R.id.btnlogin);
         repository =  new Repository();
+        //objeto
+        customSharedPreferences = new CustomSharedPreferences(LoginActivity.this);
 
+// valida el  proceso de  auto login
+        verifyToken();
+
+    }
+
+    private void verifyToken() {
+        if(customSharedPreferences.getString(Constantes.TOKEN) != null) {
+        //logica para ir al repositorio con el metodo autologin
+            validateInternet();
+        }
+    }
+
+
+
+    private void validateInternet(){
+        if(validarInternet.isConnected()){
+            // se  crea  hilo independiente del principal
+            createThereadTologinWithToken();
+        }else {
+            //toas
+        }
+    }
+
+    private void createThereadTologinWithToken() {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Users user=     repository.loginWithToke(customSharedPreferences.getString(Constantes.TOKEN));
+                    Intent intent = new Intent(LoginActivity.this , PerfilActivity.class);
+                    intent.putExtra("usuario", user);
+                    startActivity(intent);
+                    finish();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
     }
 
 
@@ -46,8 +90,7 @@ public class LoginActivity extends AppCompatActivity implements IMainActivity, T
         if(validarInternet.isConnected()){
             createThereadLogin();
     }else {
-
-        }
+            }
 }
 
     private void createThereadLogin( ) {
@@ -65,6 +108,11 @@ public class LoginActivity extends AppCompatActivity implements IMainActivity, T
         try {
          Users user=   repository.logIn(txtUser.getText().toString(),txtpasswor.getText().toString());
             showMessage(user.getName());
+            //agrega string con clave y  valor despues de loguearse
+            customSharedPreferences.addString(Constantes.TOKEN,user.getToken());
+
+
+
           //metodo para cambiar de actividad enviando  un objeto completo
             Intent intent = new Intent(this, PerfilActivity.class);
             intent.putExtra("usuario", user);

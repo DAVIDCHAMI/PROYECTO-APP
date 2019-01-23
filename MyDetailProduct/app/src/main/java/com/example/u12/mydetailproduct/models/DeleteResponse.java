@@ -3,7 +3,7 @@ package com.example.u12.mydetailproduct.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DeleteResponse {
+public class DeleteResponse extends Users {
 
     @SerializedName("status")
     @Expose

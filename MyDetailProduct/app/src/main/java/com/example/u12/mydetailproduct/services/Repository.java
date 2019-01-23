@@ -110,5 +110,24 @@ public class Repository {
     }
 
 
+    // metodo  para  realizar auto login
+    public Users loginWithToke(String token) throws  IOException{
+
+        try {
+            String bearerToken ="bearer:"+token;
+            Call<Users> call =iServices.loginWithToke(bearerToken);
+            Response<Users> response =call.execute();
+            if(response.errorBody()  != null){
+                throw  defultError();
+            }else {
+                return  response.body();
+            }
+        }catch (IOException e){
+            throw  defultError();
+        }
+
+    }
+
+
     /////////////////////////////////////////////////////////////////////////////////
 }
