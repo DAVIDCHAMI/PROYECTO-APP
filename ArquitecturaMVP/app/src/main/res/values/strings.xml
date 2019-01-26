@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ArquitecturaMVP</string>
+    <string name="title_activity_edad">EdadActivity</string>
+</resources>
