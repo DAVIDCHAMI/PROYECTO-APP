@@ -2,10 +2,9 @@ package com.example.u12.futbolactivo.services;
 
 
 
-import com.example.u12.futbolactivo.modelos.Equipos;
+import com.example.u12.futbolactivo.modelos.ContenedorEquipos;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -21,13 +20,13 @@ public class Repository {
         iServices= (IServices) servicesFactory.getInstanceServices(IServices.class);
     }
 
-    public ArrayList<Equipos> getEquipos() throws IOException{
+    public ContenedorEquipos getEquipos() throws IOException{
 
 
         try {
 
-            Call<ArrayList<Equipos>> call = iServices.getEquipos("4335");
-            Response<ArrayList<Equipos>> response =call.execute();
+            Call<ContenedorEquipos> call = iServices.getEquipos("4335");
+            Response<ContenedorEquipos> response =call.execute();
             if(response.errorBody() != null){
                 throw defultError();
             }else {

@@ -3,8 +3,10 @@ package com.example.u12.futbolactivo.views.actividades;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.u12.futbolactivo.R;
+import com.example.u12.futbolactivo.modelos.ContenedorEquipos;
 import com.example.u12.futbolactivo.modelos.Equipos;
 import com.example.u12.futbolactivo.presenters.EquiposPresenter;
 import com.example.u12.futbolactivo.views.BaseActivity;
@@ -40,8 +42,12 @@ public class MainActivity extends BaseActivity<EquiposPresenter> implements IEqu
 
     }
 
+
+
     @Override
-    public void showLeague(ArrayList<Equipos> equipos) {
-        equipos.size();
+    public void showLeague(ContenedorEquipos equipos) {
+       int tam= equipos.getTeams().size();
+        Toast.makeText(this,tam,Toast.LENGTH_SHORT).show();
     }
+
 }

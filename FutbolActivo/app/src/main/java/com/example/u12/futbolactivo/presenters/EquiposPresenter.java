@@ -2,6 +2,7 @@ package com.example.u12.futbolactivo.presenters;
 
 import android.widget.Toast;
 
+import com.example.u12.futbolactivo.modelos.ContenedorEquipos;
 import com.example.u12.futbolactivo.modelos.Equipos;
 import com.example.u12.futbolactivo.services.Repository;
 import com.example.u12.futbolactivo.views.interfeces.IEquiposView;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 
 public class EquiposPresenter extends BasePresenter<IEquiposView> {
     private Repository repository;
-    //private   ArrayList<Equipos> equipos;
+
 
 
     public void getLeague() {
@@ -38,12 +39,12 @@ public class EquiposPresenter extends BasePresenter<IEquiposView> {
     private void getEquipos() {
 
         try {
-            ArrayList<Equipos> equipos = repository.getEquipos();
+            ContenedorEquipos equipos = repository.getEquipos();
             // ya regreso
             getView().showLeague(equipos);
 
 
-        } catch (final IOException e) {
+        } catch ( IOException e) {
 e.getMessage();
 
         }
