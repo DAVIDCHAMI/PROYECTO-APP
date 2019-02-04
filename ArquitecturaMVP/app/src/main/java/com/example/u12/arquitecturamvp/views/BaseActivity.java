@@ -41,6 +41,11 @@ public class BaseActivity<T extends BasePresenter> extends AppCompatActivity  im
         Toast.makeText(this,String.valueOf(resultado),Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void showToasMessage(String s) {
+        Toast.makeText(this,s,Toast.LENGTH_SHORT).show();
+    }
+
     /*
     @Override
     public void showAlertDialo(int resultado) {

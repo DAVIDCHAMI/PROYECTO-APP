@@ -4,4 +4,6 @@ public interface IBaseView {
 
     //opción dos
     void showToas(int resultado);
+
+    void showToasMessage(String s);
 }

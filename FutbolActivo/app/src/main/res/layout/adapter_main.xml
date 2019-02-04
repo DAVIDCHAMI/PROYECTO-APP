@@ -25,7 +25,7 @@
             android:layout_toRightOf="@+id/imageViewProduct"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             android:textStyle="bold"
-            tools:text="Mantequilla" />
+            tools:text="Equipo" />
 
         <TextView
             android:id="@+id/textViewDescription"

@@ -46,9 +46,6 @@ public class MainActivity extends BaseActivity<EquiposPresenter> implements IEqu
 
 
 
-
-
-
     }
 
 
