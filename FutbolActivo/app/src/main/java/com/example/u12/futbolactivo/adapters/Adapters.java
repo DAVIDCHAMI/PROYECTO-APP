@@ -8,10 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.u12.futbolactivo.R;
 import com.example.u12.futbolactivo.modelos.Equipos;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,7 @@ public class Adapters extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private ArrayList<Equipos> equiposArrayList;
     private Context context;
+    ImageView imageView;
 
     public Adapters(ArrayList<Equipos> equiposArrayList) {
         this.equiposArrayList = equiposArrayList;
@@ -45,6 +48,7 @@ public class Adapters extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         CustomViewHolder customViewHolder= (CustomViewHolder) viewHolder;
         final Equipos equipos =equiposArrayList.get(i);
 
+        Picasso.get().load(equipos.getEscudoEquipo()).into(imageView);
         customViewHolder.textViewName.setText(equipos.getNombreEquipo());
         customViewHolder.textViewDescription.setText(equipos.getNombreLiga());
 
@@ -66,6 +70,7 @@ public class Adapters extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public CustomViewHolder(View itemView) {
             super(itemView);
 
+            imageView =itemView.findViewById(R.id.imageViewProduct);
             textViewName = itemView.findViewById(R.id.textViewName);
             textViewDescription = itemView.findViewById(R.id.textViewDescription);
             cardViewItem = itemView.findViewById(R.id.cardviewItem);

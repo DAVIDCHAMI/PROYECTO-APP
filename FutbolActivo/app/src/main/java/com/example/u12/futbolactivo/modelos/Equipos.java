@@ -26,7 +26,7 @@ public class Equipos implements Serializable {
     private String camisaEquipo;
 
 
-    @SerializedName("strTeamLogo")
+    @SerializedName("strTeamBadge")
     @Expose
     private String escudoEquipo;
 

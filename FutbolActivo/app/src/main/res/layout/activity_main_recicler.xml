@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE2E1E1"
     tools:context=".views.actividades.MainRecicler">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/reciclerView"
         android:layout_width="match_parent"
-        android:layout_height="489dp"
-        android:layout_margin="20dp"
-        android:layout_weight="0.9" />
+        android:layout_height="match_parent" />
 
 
 
