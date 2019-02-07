@@ -2,6 +2,7 @@ package com.example.u12.futbolactivo.adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.u12.futbolactivo.R;
 import com.example.u12.futbolactivo.modelos.Equipos;
+import com.example.u12.futbolactivo.views.actividades.DescripcionEquipoActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -51,7 +53,14 @@ public class Adapters extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         Picasso.get().load(equipos.getEscudoEquipo()).into(imageView);
         customViewHolder.textViewName.setText(equipos.getNombreEquipo());
         customViewHolder.textViewDescription.setText(equipos.getNombreLiga());
-
+        customViewHolder.cardViewItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,DescripcionEquipoActivity.class);
+                intent.putExtra("equipo", equipos);
+                context.startActivity(intent);
+            }
+        });
 
     }
 

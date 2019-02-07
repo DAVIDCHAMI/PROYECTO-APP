@@ -30,6 +30,29 @@ public class Equipos implements Serializable {
     @Expose
     private String escudoEquipo;
 
+    @SerializedName("intFormedYear")
+    @Expose
+    private String año;
+
+    @SerializedName("strStadiumDescription")
+    @Expose
+    private String description;
+
+    public String getAño() {
+        return año;
+    }
+
+    public void setAño(String año) {
+        this.año = año;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public int getIdEquipo() {
         return idEquipo;
