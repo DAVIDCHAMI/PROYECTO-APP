@@ -50,15 +50,18 @@ public class Adapters extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         CustomViewHolder customViewHolder= (CustomViewHolder) viewHolder;
         final Equipos equipos =equiposArrayList.get(i);
 
+        equipos.getAño();
+
         Picasso.get().load(equipos.getEscudoEquipo()).into(imageView);
         customViewHolder.textViewName.setText(equipos.getNombreEquipo());
         customViewHolder.textViewDescription.setText(equipos.getNombreLiga());
         customViewHolder.cardViewItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,DescripcionEquipoActivity.class);
+                Intent intent = new Intent(context, DescripcionEquipoActivity.class);
                 intent.putExtra("equipo", equipos);
-                context.startActivity(intent);
+               context. startActivity(intent);
+
             }
         });
 

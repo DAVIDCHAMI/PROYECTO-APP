@@ -25,6 +25,8 @@ public class DescripcionEquipoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_descripcion_equipo);
         validarInternet = new ValidarInternet(this);
+        getIntent().getSerializableExtra("equipo");
+
         repository = new Repository();
 
 
