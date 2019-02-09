@@ -8,28 +8,45 @@
     tools:context=".views.activitis.MainActivity">
 
     <EditText
-        android:id="@+id/txtnum1"
-        android:hint="Número 1"
-        android:inputType="number"
+        android:id="@+id/txtnombre"
+        android:hint="NOMBRE"
+        android:inputType="text"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/txtnum2"
-        android:hint="Número 2"
+        android:id="@+id/txtTelefono"
+        android:hint="Telefono"
         android:layout_marginTop="20dp"
-        android:inputType="number"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/txtCompañia"
+        android:hint="Compañia"
+        android:layout_marginTop="20dp"
+        android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
 
     <Button
-        android:id="@+id/btncalcular"
-        android:text="CALCULAR"
+    android:id="@+id/btncalcular"
+    android:text="GUARDAR CONTACTO"
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:onClick="Calcular"
+    android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/btnShowContact"
+        android:text="MOSTRAR CONTACTO"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:onClick="Calcular"
+        android:onClick="ShowContact2"
         android:layout_height="wrap_content" />
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.u12.arquitecturamvp.views.activitis;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,7 @@ import com.example.u12.arquitecturamvp.views.interfeces.IMainView;
 
 public class MainActivity extends BaseActivity <MainPresenter> implements IMainView {
 
-    private EditText numOne, numTwo;
+    private EditText txtnombre, txttelefono, txtcompañia;
 
 
     @Override
@@ -31,8 +32,9 @@ public class MainActivity extends BaseActivity <MainPresenter> implements IMainV
     }
 
     private void setComponentes() {
-        numOne=findViewById(R.id.txtnum1);
-        numTwo =findViewById(R.id.txtnum2);
+        txtnombre=findViewById(R.id.txtnombre);
+        txttelefono =findViewById(R.id.txtTelefono);
+        txtcompañia = findViewById(R.id.txtCompañia);
     }
 
 
@@ -49,8 +51,8 @@ public class MainActivity extends BaseActivity <MainPresenter> implements IMainV
 
                 */
         // opción 3
-        getPresenter().Calculte2(Integer.parseInt(numOne.getText().toString()),
-                Integer.parseInt(numTwo.getText().toString()));
+      getPresenter().Calculte2(txtnombre.getText().toString(),txttelefono.getText().toString(),txtcompañia.getText().toString());
+
 
 
     }
@@ -61,5 +63,27 @@ public class MainActivity extends BaseActivity <MainPresenter> implements IMainV
         Toast.makeText(this,String.valueOf(result),Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void showMessageLocalContact(final boolean success) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                String msg =success ? "Contacto Creado" : "Contacto no creado";
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT ).show();
+            }
+        });
 
+
+    }
+
+
+    public void ShowContact(View view) {
+        getPresenter().showContactList();
+
+    }
+
+    public void ShowContact2(View view) {
+        Intent intent = new Intent(MainActivity.this, ListarContatosActivity.class);
+        startActivity(intent);
+    }
 }

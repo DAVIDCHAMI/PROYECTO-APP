@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardviewItem"
+    android:background="#FFE6DDDD"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Nombre"
+            android:id="@+id/txtNombres"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/ic_android_black_24dp" />
+
+        <TextView
+            android:id="@+id/textTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:layout_toRightOf="@id/txtNombres"
+            android:layout_marginLeft="0dp"
+            android:gravity="center"
+            android:text="Telefono"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:id="@+id/textCompañia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/txtNombres"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Compañia"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

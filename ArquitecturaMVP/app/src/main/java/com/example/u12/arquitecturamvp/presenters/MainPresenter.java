@@ -1,11 +1,15 @@
 package com.example.u12.arquitecturamvp.presenters;
 
+import android.database.sqlite.SQLiteException;
 import android.support.annotation.UiThread;
+import android.text.Editable;
 import android.util.Log;
 
 import com.example.u12.arquitecturamvp.helps.Database;
 import com.example.u12.arquitecturamvp.models.Contacto;
 import com.example.u12.arquitecturamvp.views.interfeces.IMainView;
+
+import java.util.ArrayList;
 
 public class MainPresenter  extends  BasePresenter<IMainView>{
 
@@ -22,23 +26,18 @@ public class MainPresenter  extends  BasePresenter<IMainView>{
     }
 
     //opción 3
-    public void Calculte2(int n1, int n2) {
-        createContactos();
-        getView().showToas(n1+n2);
+    public void Calculte2(String nombre, String telefono, String compañia) {
+        createContactos(nombre,telefono,compañia);
+        //getView().showToas(n1+n2);
 
     }
 
 
-    private void createContactos(){
-        Contacto contacto= new Contacto(0, "MAQUINA", "123456789", "MATRIX");
-
-        Contacto contacto2 = new Contacto(0, "JOSEFA", "98765432", "MATRIX");
+    private void createContactos(String nombre, String telefono, String compañia){
+        Contacto contacto= new Contacto(0, nombre, telefono, compañia);
 
 
-
-
-
-
+        createThreadContacto(contacto);
     }
 
     //hilo
@@ -53,18 +52,47 @@ public class MainPresenter  extends  BasePresenter<IMainView>{
   }
 ///  quema los  datos
     private void createContactoLocalDb(Contacto contacto) {
+        boolean isSaved =false;
+
         try {
-            boolean isSaved = Database.contactoDao.createContacto(contacto);
-            int  msg = isSaved ? 1 : 0;
-            Log.i("Contacto creado", "" + msg);
-           // getView().showToas(1);
-           // getView().showToasMessage(msg);
+             isSaved = Database.contactoDao.createContacto(contacto);
+            getView().showMessageLocalContact(isSaved);
+
         }catch (Exception e){
+            getView().showMessageLocalContact(isSaved);
 
         }
     }
 
 
+    public void showContactList() {
+        this.getContactsThreadList();
+
+    }
+
+    public void getContactsThreadList(){
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                getContactsFromDb();
+            }
+        });
+        t.start();
+    }
+
+    private void  getContactsFromDb(){
+        try {
+            ArrayList<Contacto> contactsList= Database.contactoDao.fetchAllContactos();
+            // TODO
+            for ( Contacto dto: contactsList) {
+                Log.i("contacto name: ", dto.getName());
+
+            }
+        }catch (SQLiteException e){
+
+        }
+
+    }
 
 
 }
