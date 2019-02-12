@@ -8,6 +8,17 @@ import java.io.Serializable;
 public class Product implements Serializable {
 
 
+    @SerializedName("idTeam")
+    @Expose
+    private String idEquipo;
+
+    public String getIdEquipo() {
+        return idEquipo;
+    }
+
+    public void setIdEquipo(String idEquipo) {
+        this.idEquipo = idEquipo;
+    }
 
     @SerializedName("name")
     @Expose
@@ -29,6 +40,9 @@ public class Product implements Serializable {
     @SerializedName("brand")
     @Expose
     private String brand;
+
+
+
 
 
     public int getQuantity() {

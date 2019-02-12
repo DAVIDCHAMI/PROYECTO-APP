@@ -9,8 +9,15 @@ public class Equipos implements Serializable {
 
     @SerializedName("idTeam")
     @Expose
-    private int idEquipo;
+    private String idEquipo;
 
+    public String getIdEquipo() {
+        return idEquipo;
+    }
+
+    public void setIdEquipo(String idEquipo) {
+        this.idEquipo = idEquipo;
+    }
 
     @SerializedName("strTeam")
     @Expose
@@ -54,13 +61,7 @@ public class Equipos implements Serializable {
         this.description = description;
     }
 
-    public int getIdEquipo() {
-        return idEquipo;
-    }
 
-    public void setIdEquipo(int idEquipo) {
-        this.idEquipo = idEquipo;
-    }
 
     public String getNombreEquipo() {
         return nombreEquipo;

@@ -16,16 +16,11 @@ public class EquiposPresenter extends BasePresenter<IEquiposView> {
 
 
     public void getLeague() {
-
         repository = new Repository();
-
         createThereadGetProduct();
-
-
     }
 
     private void createThereadGetProduct() {
-
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -33,19 +28,14 @@ public class EquiposPresenter extends BasePresenter<IEquiposView> {
             }
         });
         thread.start();
-
     }
 
     private void getEquipos() {
-
         try {
             ContenedorEquipos equipos = repository.getEquipos();
-            // ya regreso
             getView().showLeague(equipos);
-
-
         } catch ( IOException e) {
-e.getMessage();
+            e.getMessage();
 
         }
 
