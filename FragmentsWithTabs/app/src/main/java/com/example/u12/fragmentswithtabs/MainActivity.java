@@ -1,6 +1,8 @@
 package com.example.u12.fragmentswithtabs;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -19,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         tabs_container =findViewById(R.id.tabs_container);
         loadViewPager();
+
+        // abrir componentes del dispositivo
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("wwww.google.com"));
+        startActivity(intent);
+
+
+
+
     }
 
     // la encargada de  mandar el tabs al fragment
