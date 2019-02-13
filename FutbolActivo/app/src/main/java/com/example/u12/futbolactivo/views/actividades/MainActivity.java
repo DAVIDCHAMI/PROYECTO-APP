@@ -31,10 +31,10 @@ public class MainActivity extends BaseActivity<EquiposPresenter> implements IEqu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*dialog = new ProgressDialog(MainActivity.this);
+        dialog = new ProgressDialog(MainActivity.this);
         dialog.setTitle("HOLA");
         dialog.setMessage("ESPERA UN MOMENTO");
-        dialog.show();*/
+        dialog.show();
 
         //contexto y
         setPresenter(new EquiposPresenter());
