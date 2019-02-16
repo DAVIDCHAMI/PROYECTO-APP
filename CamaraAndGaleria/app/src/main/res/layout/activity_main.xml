@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/camara"
+        android:layout_width="108dp"
+        android:layout_height="85dp"
+        android:src="@drawable/ic_camera_alt_black_camaradp" />
+
+    <ImageView
+        android:id="@+id/galeria"
+        android:layout_width="113dp"
+        android:layout_height="91dp"
+        android:src="@drawable/ic_color_lens_black_24dp" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/reciclerViewPhotos"
+        android:scrollbars="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
