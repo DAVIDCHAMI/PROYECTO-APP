@@ -7,6 +7,20 @@ import java.io.Serializable;
 
 public class Equipos implements Serializable {
 
+
+    @SerializedName("strWebsite")
+    @Expose
+    private String website;
+
+
+    @SerializedName("strFacebook")
+    @Expose
+    private String facebook;
+
+    @SerializedName("strInstagram")
+    @Expose
+    private String instagram;
+
     @SerializedName("idTeam")
     @Expose
     private String idEquipo;
@@ -41,7 +55,7 @@ public class Equipos implements Serializable {
     @Expose
     private String año;
 
-    @SerializedName("strStadiumDescription")
+    @SerializedName("strDescriptionES")
     @Expose
     private String description;
 
@@ -93,5 +107,30 @@ public class Equipos implements Serializable {
 
     public void setEscudoEquipo(String escudoEquipo) {
         this.escudoEquipo = escudoEquipo;
+    }
+
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public String getInstagram() {
+        return instagram;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
     }
 }

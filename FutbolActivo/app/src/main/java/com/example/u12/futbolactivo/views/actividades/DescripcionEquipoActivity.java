@@ -1,5 +1,7 @@
 package com.example.u12.futbolactivo.views.actividades;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,7 +29,7 @@ public class DescripcionEquipoActivity extends BaseActivity<FechasPresenter> imp
     private FechasEquipo fechasEquipo;
     private Equipos equipos;
     private TextView txtnombreEquipo, txtaño, txtdescription, txtfecha1, txtfecha2, txtfecha3, txtfecha4, txtfecha5;
-    private ImageView imgEquipo;
+    private ImageView imgEquipo, imaface, imaims,imaweb;
     private Repository repository;
     private ValidarInternet validarInternet;
 
@@ -49,6 +51,11 @@ public class DescripcionEquipoActivity extends BaseActivity<FechasPresenter> imp
         txtfecha3 = findViewById(R.id.txtfecha3);
         txtfecha4 = findViewById(R.id.txtfecha4);
         txtfecha5 = findViewById(R.id.txtfecha5);
+        imaface =findViewById(R.id.imaface);
+        imaims=findViewById(R.id.imaims);
+        imaweb=findViewById(R.id.imayou);
+
+
 
         Picasso.get().load(equipos.getCamisaEquipo()).into(imgEquipo);
         txtnombreEquipo.setText(equipos.getNombreEquipo());
@@ -79,5 +86,23 @@ public class DescripcionEquipoActivity extends BaseActivity<FechasPresenter> imp
         txtfecha3.setText(f3);
         txtfecha4.setText(f4);
         txtfecha5.setText(f5);
+    }
+
+    public void onFace(View view) {
+        String Url="https://"+equipos.getFacebook();
+        Uri uri = Uri.parse(Url); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+
+
+    }
+
+    public void onYou(View view) {
+
+    }
+
+    public void onIms(View view) {
+
+
     }
 }

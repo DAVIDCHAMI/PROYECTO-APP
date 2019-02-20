@@ -8,6 +8,17 @@
     android:orientation="vertical"
     tools:context=".views.actividades.DescripcionEquipoActivity">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:fillViewport="true"
+        android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,6 +47,44 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:onClick="onFace"
+            android:id="@+id/imaface"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_backup_black_facdp" />
+
+        <ImageView
+            android:onClick="onYou"
+            android:id="@+id/imayou"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_camera_roll_black_youdp" />
+
+        <ImageView
+            android:onClick="onIms"
+            android:id="@+id/imaims"
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_camera_alt_black_imsdp" />
+
+    </LinearLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="3dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="10dp"
@@ -69,71 +118,71 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/txtdescription"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:hint="Descripción"
-            android:inputType="textMultiLine"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/txtfecha1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:text="fecha"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtdescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:hint="Descripción"
+                android:inputType="textMultiLine"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtfecha2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:text="fecha"
-            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtfecha3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:text="fecha"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtfecha1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="fecha"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtfecha4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:text="fecha"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtfecha2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="fecha"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtfecha5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:text="fecha"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtfecha3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="fecha"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/txtfecha4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="fecha"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtfecha5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="fecha"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     <Button
         android:id="@+id/btnregresar"
@@ -144,5 +193,7 @@
         android:text="REGRESAR"
         android:textStyle="bold" />
 
+    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
