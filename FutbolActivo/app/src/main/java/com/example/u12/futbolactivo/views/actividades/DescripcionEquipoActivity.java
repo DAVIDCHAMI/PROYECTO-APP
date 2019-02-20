@@ -98,11 +98,17 @@ public class DescripcionEquipoActivity extends BaseActivity<FechasPresenter> imp
     }
 
     public void onYou(View view) {
-
+        String Url="https://"+equipos.getWebsite();
+        Uri uri = Uri.parse(Url); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 
     public void onIms(View view) {
-
+        String Url="https://"+equipos.getInstagram();
+        Uri uri = Uri.parse(Url); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
 
     }
 }
