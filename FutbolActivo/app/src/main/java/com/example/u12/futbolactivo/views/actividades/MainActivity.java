@@ -32,8 +32,8 @@ public class MainActivity extends BaseActivity<EquiposPresenter> implements IEqu
         setContentView(R.layout.activity_main);
 
         dialog = new ProgressDialog(MainActivity.this);
-        dialog.setTitle("HOLA");
-        dialog.setMessage("ESPERA UN MOMENTO");
+        dialog.setTitle("HOLA CHAMI");
+        dialog.setMessage("CREADO POR DAVID");
         dialog.show();
 
         //contexto y

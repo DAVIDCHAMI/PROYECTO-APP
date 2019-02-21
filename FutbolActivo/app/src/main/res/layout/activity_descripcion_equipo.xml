@@ -136,39 +136,47 @@
 
 
             <TextView
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:id="@+id/txtfecha1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:text="fecha"
+                android:inputType="textMultiLine"
                 android:textStyle="bold" />
 
             <TextView
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:inputType="textMultiLine"
                 android:id="@+id/txtfecha2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="1dp"
                 android:text="fecha"
                 android:textStyle="bold" />
 
             <TextView
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:inputType="textMultiLine"
                 android:id="@+id/txtfecha3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="1dp"
                 android:text="fecha"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtfecha4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="36dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="1dp"
+                android:inputType="textMultiLine"
                 android:text="fecha"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textStyle="bold" />
 
             <TextView
@@ -176,8 +184,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="1dp"
+                android:inputType="textMultiLine"
                 android:text="fecha"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textStyle="bold" />
 
         </LinearLayout>
