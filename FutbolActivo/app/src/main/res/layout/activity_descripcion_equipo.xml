@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFB4C2BD"
+    android:background="#FFB0EBEC"
     android:orientation="vertical"
     tools:context=".views.actividades.DescripcionEquipoActivity">
 
@@ -19,6 +19,7 @@
 
 
         <LinearLayout
+            android:background="#FFB0EBEC"
             android:layout_margin="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,46 +78,43 @@
         </LinearLayout>
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="166dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:text="FUNDADO EN:"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
 
+            <TextView
+                android:id="@+id/txtaño"
+                android:layout_width="361dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:text="AÑO"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
 
-    <LinearLayout
-        android:layout_marginTop="3dp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_weight="0.1"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="166dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="5dp"
-            android:text="FUNDADO EN:"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:id="@+id/txtaño"
-            android:layout_width="361dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="5dp"
-            android:text="AÑO"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-
-    </LinearLayout>
+        </LinearLayout>
 
 
         <LinearLayout
+            android:background="#FFECE5E5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -127,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="1dp"
                 android:layout_marginRight="5dp"
                 android:hint="Descripción"
                 android:inputType="textMultiLine"
@@ -136,39 +134,43 @@
 
 
             <TextView
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:id="@+id/txtfecha1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="29dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:text="fecha"
                 android:inputType="textMultiLine"
+                android:text="fecha"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textSize="14dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:inputType="textMultiLine"
                 android:id="@+id/txtfecha2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="37dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="1dp"
+                android:inputType="textMultiLine"
                 android:text="fecha"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textSize="14dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:inputType="textMultiLine"
                 android:id="@+id/txtfecha3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="37dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="1dp"
+                android:inputType="textMultiLine"
                 android:text="fecha"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textSize="14dp"
                 android:textStyle="bold" />
 
             <TextView
+                android:textSize="14dp"
                 android:id="@+id/txtfecha4"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
@@ -180,11 +182,12 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:textSize="14dp"
                 android:id="@+id/txtfecha5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="33dp"
+                android:layout_margin="1dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="1dp"
                 android:inputType="textMultiLine"
                 android:text="fecha"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
@@ -196,7 +199,7 @@
         android:id="@+id/btnregresar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:onClick="regresar"
         android:text="REGRESAR"
         android:textStyle="bold" />

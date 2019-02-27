@@ -23,7 +23,6 @@ public class Adapters extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private ArrayList<Equipos> equiposArrayList;
     private Context context;
-    ImageView imageView;
 
     public Adapters(ArrayList<Equipos> equiposArrayList) {
         this.equiposArrayList = equiposArrayList;
@@ -52,10 +51,10 @@ public class Adapters extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         equipos.getAño();
 
-        Picasso.get().load(equipos.getEscudoEquipo()).into(imageView);
+        Picasso.get().load(equipos.getEscudoEquipo()).into(customViewHolder.imageView);
         customViewHolder.textViewName.setText(equipos.getNombreEquipo());
         customViewHolder.textViewDescription.setText(equipos.getNombreLiga());
-        customViewHolder.cardViewItem.setOnClickListener(new View.OnClickListener() {
+        customViewHolder.cardViewItem.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DescripcionEquipoActivity.class);
@@ -75,6 +74,7 @@ public class Adapters extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private class CustomViewHolder extends RecyclerView.ViewHolder {
         private TextView textViewName;
+        private ImageView imageView;
         private TextView textViewDescription;
         private CardView cardViewItem;
 

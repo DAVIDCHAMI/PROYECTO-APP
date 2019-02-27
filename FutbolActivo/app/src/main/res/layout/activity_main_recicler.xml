@@ -10,6 +10,7 @@
 
 
     <android.support.v7.widget.RecyclerView
+        android:background="#FFB0EBEC"
         android:layout_marginTop="20dp"
         android:id="@+id/reciclerView"
         android:layout_width="match_parent"
