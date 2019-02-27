@@ -3,6 +3,7 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+<<<<<<< HEAD:FutbolActivo/.idea/assetWizardSettings.xml
         <entry key="imageWizard">
           <value>
             <PersistentState>
@@ -50,6 +51,8 @@
             </PersistentState>
           </value>
         </entry>
+=======
+>>>>>>> e73d95c3a8ce990ec3a08fcf1527898d615f3bbf:Mapas/.idea/assetWizardSettings.xml
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -65,7 +68,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/image/ic_camera_roll_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/communication/ic_location_on_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -75,7 +78,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_camera_roll_black_youdp" />
+                            <entry key="color" value="4bff31" />
+                            <entry key="outputName" value="ic_location_on_black_tresdp" />
                             <entry key="sourceFile" value="C:\Users\u12" />
                           </map>
                         </option>
