@@ -52,10 +52,8 @@ public class DescripcionEquipoActivity extends BaseActivity<FechasPresenter> imp
         txtfecha4 = findViewById(R.id.txtfecha4);
         txtfecha5 = findViewById(R.id.txtfecha5);
         imaface =findViewById(R.id.imaface);
-        imaims=findViewById(R.id.imaims);
-        imaweb=findViewById(R.id.imayou);
-
-
+        imaims = findViewById(R.id.imaims);
+        imaweb = findViewById(R.id.imayou);
 
         Picasso.get().load(equipos.getCamisaEquipo()).into(imgEquipo);
         txtnombreEquipo.setText(equipos.getNombreEquipo());
